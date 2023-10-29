@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+html {
+scroll-behavior: smooth;
+}
+
+header {
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+height: 50px;
+width: 100%;
+background: rgb(41, 0, 61);
+}
+.heading ul {
+display: flex;
+}
+.logo a {
+color: rgb(0, 70, 55);
+transition-duration: 1s;
+font-weight: 900;
+}
+.logo a:hover {
+color: rgb(240, 197, 6);
+transition-duration: 1s;
+}
+.heading ul li {
+list-style: none;
+}
+.heading ul li a {
+margin: 5px;
+text-decoration: none;
+color: black;
+font-weight: 500;
+position: relative;
+color: white;
+margin: 2px 14px;
+font-size: 18px;
+transition-duration: 2s;
+}
+.heading ul li a:active {
+color: red;
+}
+.heading ul li a:hover {
+color: rgb(243, 168, 7);
+transition-duration: 1s;
+}
+
+.heading ul li a::before {
+content: "";
+height: 2px;
+width: 0px;
+position: absolute;
+left: 0;
+bottom: 0;
+background-color: white;
+transition-duration: 1s;
+}
+.heading ul li a:hover::before {
+width: 100%;
+transition-duration: 1s;
+background-color: rgb(243, 168, 7);
+}
+#input {
+height: 30px;
+width: 300px;
+text-decoration: none;
+border: 0px;
+padding: 5px;
+}
+.logo a {
+color:white;
+font-size: 35px;
+font-weight: 500;
+text-decoration: none;
+}
+ion-icon {
+width: 30px;
+height: 30px;
+background-color: white;
+color: black;
+}
+ion-icon:hover {
+cursor: pointer;
+}
+.search a {
+display: flex;
+}
+header a ion-icon {
+position: relative;
+right: 3px;
+}
+
+.img-slider img {
+height: 630px;
+width: 100%;
+}
+@keyframes slide {
+0% {
+left: 0px;
+}
+15% {
+left: 0px;
+}
+20% {
+left: -1080px;
+}
+32% {
+left: -1080px;
+}
+35% {
+left: -2160px;
+}
+47% {
+left: -2160px;
+}
+50% {
+left: -3240px;
+}
+63% {
+left: -3240px;
+}
+66% {
+left: -4320px;
+}
+79% {
+left: -4320px;
+}
+82% {
+left: -5400px;
+}
+100% {
+left: 0px;
+}
+}
+.img-slider {
+border-radius: 2px;
+display: flex;
+float: left;
+position: relative;
+width: 1080px;
+height: 720px;
+animation-name: slide;
+animation-duration: 20s;
+animation-iteration-count: infinite;
+transition-duration: 4s;
+}
+
+.heading1 {
+opacity: 0;
+}
+
+
+.search a {
+display: flex;
+}
+
+
+.section1 {
+width: 1080px;
+overflow: hidden;
+justify-content: center;
+align-items: center;
+margin: 0px auto;
+}
+
+.section2 .container {
+display: flex;
+width: 100%;
+height: max-content;
+flex-wrap: wrap;
+justify-content: center;
+margin: 10px auto;
+}
+.section2 .container .items {
+margin: 20px;
+width: 200px;
+height: 300px;
+background-color: rgb(8, 8, 8);
+border: 2.5px solid black;
+border-radius: 12px;
+}
+.section2 .container .items .name {
+text-align: center;
+background-color: rgb(240, 197, 6);
+height: 25px;
+padding-top: 4px;
+color: rgb(0, 0, 0);
+margin: 0;
+}
+.section2 .container .items .price {
+float: left;
+padding-left: 10px;
+display: block;
+width: 100%;
+color: rgb(128, 0, 255);
+font-weight: 650;
+}
+.section2 .container .items .info {
+padding-left: 10px;
+color: rgb(184, 243, 7);
+}
+.section2 .container .items .img img {
+width: 200px;
+height: 200px;
+margin: 0;
+padding: 0;
+border-radius: 30px;
+transition-duration: 1s;
+}
+.section2 .container .items .img {
+overflow: hidden;
+margin: 0;
+}
+.section2 .container .items:hover .img img {
+transform: scale(1.2);
+transition-duration: 0.8s;
+border-radius: 12px;
+}
+footer {
+display: flex;
+flex-direction: column;
+background-color: rgb(0, 90, 87);
+align-items: center;
+color: rgb(255, 0, 93);
+}
+
+.footer1 {
+display: flex;
+flex-direction: column;
+align-items: center;
+color: white;
+margin-top: 15px;
+}
+.social-media {
+display: flex;
+justify-content: center;
+color: white;
+flex-wrap: wrap;
+}
+.social-media a {
+color: white;
+margin: 20px;
+border-radius: 5px;
+margin-top: 10px;
+color: white;
+}
+.social-media a ion-icon {
+color: white;
+background-color: black;
+}
+.social-media a:hover ion-icon {
+color: red;
+transform: translateY(5px);
+}
+.footer2 {
+display: flex;
+width: 100%;
+justify-content: space-evenly;
+align-items: center;
+text-decoration: none;
+flex-wrap: wrap;
+}
+.footer0 {
+font-weight: 1200;
+transition-duration: 1s;
+}
+.footer0:hover {
+color: rgb(243, 168, 7);
+}
+.footer2 .heading {
+font-weight: 900;
+font-size: 18px;
+}
+.footer3 {
+margin-top: 60px;
+margin-bottom: 20px;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+}
+.footer2 .heading:hover {
+color: rgb(243, 168, 7);
+}
+.footer2 .div:hover {
+transform: scale(1.05);
+}
+.footer3 h4 {
+margin: 0 10px;
+}
+.footer2 div {
+margin: 10px;
+}
+.menu {
+visibility: hidden;
+}
+.heading1 .ham:active {
+color: red;
+}
+.items {
+overflow: hidden;
+}
+.ham,
+.close {
+cursor: pointer;
+}
+
+@media screen and (max-width: 1250px) {
+.heading ul li {
+display: none;
+}
+
+.items {
+transform: scale(0.9);
+}
+.img-slider img {
+height: 60vw;
+width: 80vw;
+}
+.ham:active {
+color: red;
+}
+.menu {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.menu a ion-icon {
+position: absolute;
+}
+
+@keyframes slide1 {
+0% {
+left: 0vw;
+}
+15% {
+left: 0vw;
+}
+20% {
+left: -80vw;
+}
+32% {
+left: -80vw;
+}
+35% {
+left: -160vw;
+}
+47% {
+left: -160vw;
+}
+50% {
+left: -240vw;
+}
+63% {
+left: -240vw;
+}
+66% {
+left: -320vw;
+}
+79% {
+left: -320vw;
+}
+82% {
+left: -400vw;
+}
+100% {
+left: 0vw;
+}
+}
+.menu ul {
+display: flex;
+flex-direction: column;
+position: absolute;
+width: 100vw;
+height: 100vh;
+background-color: black;
+left: 0;
+top: 0;
+z-index: 11;
+align-items: center;
+justify-content: center;
+opacity: 1;
+}
+.close {
+z-index: 34;
+
+color: white;
+background-color: black;
+}
+.close:active {
+color: red;
+}
+.menu ul li {
+list-style: none;
+margin: 20px;
+border-top: 3px solid white;
+width: 80%;
+text-align: center;
+
+padding-top: 10px;
+}
+.menu ul li a {
+text-decoration: none;
+padding-top: 10px;
+color: white;
+font-weight: 900;
+}
+.menu ul li a:hover {
+color: rgb(240, 197, 6);
+}
+.img-slider {
+display: flex;
+float: left;
+position: relative;
+width: 80%;
+height: 60%;
+animation-name: slide1;
+animation-duration: 10s;
+animation-iteration-count: infinite;
+transition-duration: 2s;
+}
+.section1 {
+width: 80%;
+overflow: hidden;
+
+justify-content: center;
+align-items: center;
+margin: 0px auto;
+}
+
+.heading1 {
+opacity: 1;
+position: relative;
+bottom: 8px;
+}
+.search a {
+display: flex;
+flex-wrap: nowrap;
+}
+
+.heading1 .ham {
+background-color: black;
+color: white;
+}
+#input {
+width: 200px;
+flex-shrink: 2;
+}
+header {
+height: 150px;
+}
+}
+@media screen and (max-width: 550px) {
+.heading ul li {
+display: none;
+}
+.heading1 {
+opacity: 1;
+
+bottom: 8px;
+}
+
+header {
+height: 250px;
+flex-wrap: wrap;
+display: flex;
+flex-direction: column;
+}
+#input {
+width: 150px;
+}
+.close {
+z-index: 34;
+}
+
+.search a {
+display: flex;
+flex-wrap: nowrap;
+}
+}
+
+</style>
+<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+</head>
+
+<body style="border:solid; background-color: yellowgreen;">
+<header>
+<div class="logo"><a href="#">GM MART</a></div>
+<div class="menu">
+<a href="#">
+<ion-icon name="close" class="close"></ion-icon>
+</a>
+<ul>
+<li><a href="#" class="under">HOME</a></li>
+<li><a href="#" class="under">CATEGORIES</a></li>
+<li><a href="#" class="under">NOTIFICATIONS</a></li>
+<li><a href="#" class="under">ACCOUNT</a></li>
+<li><a href="#" class="under">CART</a></li>
+</ul>
+</div>
+</a><div class="search">
+<a href=""><input type="text" placeholder="Search.." id="input">
+<ion-icon class="s" name="search"></ion-icon>
+</a>
+</div>
+<div class="heading">
+<ul>
+<li><a href="#" class="under">DEALS</a></li>
+
+<li><a href="#shoes" class="under">SHOPPING</a></li>
+
+<li><a href="#section2" class="under">PRIME</a></li>
+
+<li><a href="#BEAUTY PRODUCTS" class="under">NEW ARRIVALS</a></li>
+
+<li><a href="#" class="">CART</a></li>
+
+<li><a href="#footer" class="under">NEEDS</a></li>
+</ul>
+</div>
+<div class="heading1">
+<ion-icon name="menu" class="ham"> </ion-icon>
+</div>
+</header>
+
+<marquee style="border: solid; background-color:aqua;" width="100%" direction="left" height="30px"   background-color="blue" >OFFERS VALID THROUGHOUT THE FESTIVAL  .LOWEST PRICES  .QUICK RETURNS  .CASH ON DELIVERY  . And Many More</marquee>
+
+<button><a href="#footer">HELP ?</a></button>
+
+
+<section>
+<div class="section" >
+<div class="section1">
+<div class="img-slider">
+<img src="https://cdn.grabon.in/gograbon/images/web-images/uploads/1618489444389/dussehra-offers.jpg" alt="" class="img">
+<img src="https://images.freekaamaal.com/store_desc_images/1537253332.jpg" alt="" class="img">
+<img src="https://rukminim2.flixcart.com/fk-p-flap/850/400/image/910d2935eb2a0164.jpg?q=20" alt="" class="img">
+<img src=https://www.reliancedigital.in/medias/OePlus-Nord-CE2-Lite-5G-CLP-Banner-27-04-2023-Mobile.jpg?context=bWFzdGVyfGltYWdlc3w3MDUzMXxpbWFnZS9qcGVnfGltYWdlcy9oZTcvaDI0LzEwMDYzMDU0ODMxNjQ2LmpwZ3w1Mzk5Y2RmYjQzNGEwZWFlM2Y3Yzc0NTc2OGI2M2JhNDM2ODZlOTc4MjI1ZDg4YWZiOGM0MzczZmVlYzYxODhk" alt="" class="img">
+<img src="https://cdn.grabon.in/gograbon/images/web-images/uploads/1618571140235/mobile-offers.jpg" alt="" class="img">
+</div>
+
+
+<div id="section2" class="section2">
+<div class="container">
+<div class="items" id="shoes">
+<div class="img img1"><img src="https://rukminim2.flixcart.com/image/832/832/l407mvk0/shoe/p/0/j/-original-imagezy4xkejsmpm.jpeg?q=70" alt=" "></div>
+<div class="name">FOOT WEAR</div>
+<div class="price">Starts From Just RS.599</div>
+<div class="info">Racard-M Running Shoes For Men And Women</div>
+</div>
+<div class="items">
+<div class="img img2"><img src="https://edge.mwallpapers.com/photos/celebrities/prabhas/prabhashd-wallpapers-desktop-background-android-iphone-1080p-4k-nbmb5.jpg" alt=""></div>
+<div class="name">T-SHIRT</div>
+<div class="price">Starts From Just RS.499</div>
+<div class="info">Choose T-Shirts to look as an Perfect Celebrity</div>
+</div>
+<div class="items">
+<div class="img img3"><img src="https://images.newindianexpress.com/expressdeals/assets/images/content/2023/02/21/original/Best-Jeans-Brands.jpg" alt=""></div>
+<div class="name">JEANS</div>
+<div class="price">Starts From Just RS.799</div>
+<div class="info">Best Jeans Brands in India </div>
+</div>
+<div class="items">
+<div class="img img1"><img src="https://images.meesho.com/images/products/223171144/e7abb_512.webp" alt=""></div>
+<div class="name">WATCH</div>
+<div class="price">Starts From Just RS.849</div>
+<div class="info">Latest trending analog watch for Boys and Girls</div>
+</div>
+<div class="items">
+<div class="img img1"><img src="https://cdn1.smartprix.com/rx-iDRHNGE3u-w420-h420/asus-rog-phone-7-pro.webp" alt=""></div>
+<div class="name">SMART PHONES</div>
+<div class="price">Starts From Just RS.21999</div>
+<div class="info">Choose the Best and Use the Best</div>
+</div>
+<div class="items">
+<div class="img img1"><img src="https://aws-obg-image-lb-1.tcl.com/content/dam/brandsite/product/tv/p/p615/pc/product/EM_55P615_left_global.png" alt=""></div>
+<div class="name">DESIRED TV's</div>
+<div class="price">Starts From Just Rs.14999</div>
+<div class="info">Unlimited Experience Have Great Quality Right Here</div>
+</div>
+<div class="items">
+<div class="img img1"><img src="https://st1.bollywoodlife.com/wp-content/uploads/2017/07/Prabhas-3.jpg" alt=""></div>
+<div class="name">HOODIES</div>
+<div class="price">Starts From Just RS.649</div>
+<div class="info">Be IN Your Comfort Zone Sof-tWear HOODIES</div>
+</div>
+<div class="items">
+<div class="img img1"><img src="https://nestasia.in/cdn/shop/products/DSC08615.jpg?v=1647676212" alt=""></div>
+<div class="name">DINNER SET</div>
+<div class="price">Starts From Just Rs.5999</div>
+<div class="info">We Value Yours Cleanliness and Discipline.</div>
+</div>
+<div class="items">
+<div class="img img1"><img src="https://authenticity50.com/cdn/shop/articles/Authenticity50_Cotton_Blankets.jpg?v=1651241768&width=2048" alt=""></div>
+<div class="name">BLANKETS</div>
+<div class="price">Starts From Just RS.899</div>
+<div class="info">All-Season Blanket, Designed To Elevate Your Comfort</div>
+</div>
+<div class="items">
+<div class="img img1"><img src="https://m.media-amazon.com/images/I/71zNU5UBINL.jpg" alt=""></div>
+<div class="name">LAPTOP</div>
+<div class="price">Starts From Just RS.42999</div>
+<div class="info">Don't compromise In Performance</div>
+</div>
+<div class="items">
+<div class="img img1"><img src="https://m.media-amazon.com/images/I/711fY0Yg05L._SX522_.jpg" alt=""></div>
+<div class="name">MICROWAVE</div>
+<div class="price">Strats From Just RS.6599</div>
+<div class="info">Allowing You To Prepare Meals With Effortless Ease And Efficiency. </div>
+</div>
+<div class="items" id="BEAUTY PRODUCTS">
+<div class="img img1"><img src="https://www.hyderabadonlineflorists.com/images/CSCSUUN695_big.webp" alt=""></div>
+<div class="name">BEAUTY PRODUCTS</div>
+<div class="price">Starts From Just RS.299</div>
+<div class="info">Revolutionary Line Of Beauty Products,</div>
+</div>
+<div class="items">
+<div class="img img1"><img src="https://ii1.pepperfry.com/media/catalog/product/p/a/764x840/panas-wing-chair-in-yellow-by-febonic-panas-wing-chair-in-yellow-by-febonic-m3nkex.jpg" alt=""></div>
+<div class="name">FURNITURE</div>
+<div class="price">Starts From Just</div>
+<div class="info">Meticulously Designed To Blend Seamlessly</div>
+</div>
+<div class="items">
+<div class="img img1"><img src="https://thumbs.dreamstime.com/z/sports-equipment-3181239.jpg?w=2048" alt=""></div>
+<div class="name">SPORTS GEAR</div>
+<div class="price">Starts From Just RS.1999</div>
+<div class="info">Our Sports Gear Is a Testament To Durability,Comfort,And Functionality</div>
+</div>
+<div class="items">
+<div class="img img1"><img src="https://assets.aboutamazon.com/dims4/default/0dc1215/2147483647/strip/true/crop/1919x1080+1+0/resize/1320x743!/quality/90/?url=https%3A%2F%2Famazon-blogs-brightspot.s3.amazonaws.com%2F32%2F34%2F7dca538b4c16ad7ae01ef8f7046b%2Fbest-books-hero-2.jpg" alt=""></div>
+<div class="name">BOOKS</div>
+<div class="price">Starts From Just RS.99</div>
+<div class="info">Each Book Is An Gateway To New Worlds, Ideas</div>
+</div>
+<div class="items">
+<div class="img img1"><img src="https://rukminim2.flixcart.com/image/850/1000/jv44mfk0/backpack/y/p/g/bag-bptek05eblu-laptop-backpack-skybags-original-imafff3egwkmymaa.jpeg?q=90" alt=""></div>
+<div class="name">BAGS</div>
+<div class="price">Starts From Just RS.599</div>
+<div class="info">Introducing Our Sleek And Functional Bag</div>
+</div>
+<div class="items">
+<div class="img img1"><img src="https://i.pinimg.com/736x/c9/59/37/c9593746d83b8ac8620a3f4368e952d3.jpg" alt=""></div>
+<div class="name">Women Wear</div>
+<div class="price">Starts From Just RS.999</div>
+<div class="info">For Your FAshion WE Design.</div>
+</div>
+<div class="items">
+<div class="img img1"><img src="https://m.media-amazon.com/images/I/415Lnyj0NzL._SX300_SY300_QL70_FMwebp_.jpg" alt=""></div>
+<div class="name">GYM EQUIPMENT</div>
+<div class="price">Starts From Just RS.699 </div>
+<div class="info">Asset For Every Fitness Enthusiast.</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<footer>
+<div id="footer" class="footer0">
+<h1>EveryThing You Want At Affordable Price</h1>
+</div>
+<div class="footer1 ">MAKE SURE FOLLOW US AND SHARE TO GET UPDATED EVERY SECOND<div class="social-media">
+<a href="#">
+<ion-icon name="logo-facebook"></ion-icon>
+</a>
+<a href="#">
+<ion-icon name="logo-linkedin"></ion-icon>
+</a>
+<a href="#">
+<ion-icon name="logo-youtube"></ion-icon>
+</a>
+<a href="#">
+<ion-icon name="logo-instagram"></ion-icon>
+</a>
+<a href="#">
+<ion-icon name="logo-twitter"></ion-icon>
+</a>
+</div>
+</div>
+<div class="footer2">
+<div class="product">
+<div class="heading">What We Sell</div>
+<div class="div">Branded  products like</div>
+<div class="div">cloths,Electonics,Home and more.</div>
+<div class="div">sports-equipment ,Beauty products</div>
+<div class="div">Etc.</div>
+</div>
+<div class="services">
+<div class="heading">What We Provide</div>
+<div class="div">Services like </div>
+<div class="div">contact talks</div>
+<div class="div">Returns by aggrement</div>
+<div class="div">Etc.</div>
+</div>
+<div class="Company">
+<div class="heading">What We Take</div>
+<div class="div">Your Basic Info like</div>
+<div class="div">Home Location</div>
+<div class="div">Your personals like name </div>
+<div class="div">Etc.</div>
+</div>
+<div class="Get Help">
+<div class="heading">Need Help Guys ?</div>
+<div class="div">GM@614.Services@gmail.com</div>
+<div class="div">Conntact Number</div>
+<div class="div">Terms and Conditions</div>
+<div class="div">Etc.</div>
+</div>
+</div>
+<div class="footer3">Copyright © <h4>GM.MAKERS by GUNA</h4>2023-2026</div>
+</footer>
+
+
+<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+<script>
+const close = document.querySelector(".close");
+const open = document.querySelector(".ham");
+const menu = document.querySelector(".menu");
+close.addEventListener("click", () => {
+menu.style.visibility = "hidden";
+});
+open.addEventListener("click", () => {
+menu.style.visibility = "visible";
+});
+</script>
+</body>
+</html>
